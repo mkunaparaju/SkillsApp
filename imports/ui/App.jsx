@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { createContainer } from 'meteor/react-meteor-data';
-
+import AccountsUIWrapper from './AccountsUIWrapper.jsx';
 import { Categories } from '../api/categories.js';
 
 import Category from './Category.jsx';
@@ -36,6 +36,7 @@ class App extends Component {
         <header>
           
           <h1>Skill Categories</h1>
+          <AccountsUIWrapper />
           <form className="new-category" onSubmit={this.handleSubmit.bind(this)} >
             <input
               type="text"
