@@ -5,5 +5,6 @@ import '../imports/startup/accounts-config.js';
 import App from '../imports/ui/App.jsx';
  
 Meteor.startup(() => {
-  render(<App />, document.getElementById('categoriesList'));
+  render(<App />, document.getElementById('render-target'));
+ 
 });

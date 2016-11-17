@@ -25,13 +25,18 @@ toggleStateOnClick() {
   
   render(){
     return(
-      <div className={'categories-' + (this.state.isOpen ? 'open' : 'close')} key={this.props.category._id}>
-          <li className='list-group-item' key={this.props.category._id}
-            onClick={this.toggleStateOnClick.bind(this)}>
-            {this.props.category.category}
-          </li>
-          {this.getSubCategories()}
-      </div>
+
+          <div>
+           <ul className="list-group" id="categoriesList">
+                <div className={'categories-' + (this.state.isOpen ? 'open' : 'close')} key={this.props.category._id}>
+                  <li className='list-group-item' key={this.props.category._id}
+                   onClick={this.toggleStateOnClick.bind(this)}>
+                   {this.props.category.category}
+                  </li>
+                     {this.getSubCategories()}
+                </div>
+           </ul><br />
+           </div>    
     );
   }
 }
