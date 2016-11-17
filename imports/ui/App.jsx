@@ -14,16 +14,10 @@ export default class App extends Component {
       <Category key={category._id} category={category} />
     ));
   }
-  renderDetails()
-  {
-    return this.props.subCat.map((e) => (
-      <Details key={e._id} details={e} />
-    ));
-  }
+  
   render(){
     return(
-      <div className="container-fluid">
-        <div className="row content">
+      <div>
           <AccountsUIWrapper />
           <div className="input-group">
              <input type="text" class="form-control" placeholder="Search Categories.."/>
@@ -36,41 +30,7 @@ export default class App extends Component {
           <div className="col-sm-3 ">
             {this.renderCategories()}
           </div>
-             <div className="col-sm-9">
-             <h4><small>Details</small></h4>
-             <hr />
-             {this.renderDetails()}
-           </div>
         </div>
-       </div>
-
-      //  <div className="container-fluid">
-      //   <div className="row content">
-      //   <AccountsUIWrapper />
-      //      <div className="col-sm-3 ">
-      //       <h4>Category</h4>
-      //     <div className="input-group">
-      //       <input type="text" class="form-control" placeholder="Search Categories.."/>
-      //         <span className="input-group-btn">
-      //           <button className="btn btn-default" type="button">
-      //             <span className="glyphicon glyphicon-search"></span>
-      //           </button>
-      //         </span>
-      //     </div>
-      //     <ul className="nav nav-pills nav-stacked list-group" id="categoriesList">
-      //      {this.renderCategories()}
-      //     </ul><br />
-      //     </div>
-          
-      //     <div className="col-sm-9">
-      //       <h4><small>Details</small></h4>
-      //       <hr />
-      //       {this.renderDetails()}
-      //     </div>
-
-      //   </div>
-      //   </div>
-      
       );
     }
   }   

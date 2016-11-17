@@ -10,9 +10,11 @@ export default class Details extends Component {
   render() {
    
     return (
-        <header>
-          <h1>Details</h1>
-        </header>
+       <div id = "detailsText"className="col-sm-9">
+             <h4><small>Details</small></h4>
+             <hr />
+            <p>{this.props.details.category}</p>
+           </div>
     );
   }
 }
