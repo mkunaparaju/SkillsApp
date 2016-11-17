@@ -17,7 +17,7 @@
 header {background:purple;color:white;}
 
   .col-sm-3 {
-    background-color: #f1f1f1;
+    background-color: peachpuff;
     height: 100%;
     top:0;
     bottom:30%;
@@ -30,7 +30,7 @@ header {background:purple;color:white;}
     position: relative; word-break: break-all; background:red
 }
 .col-sm-9 {
-    background-color: #f1f1f1;
+    background-color: peachpuff;
     height: 100%;
     top:0;
     bottom:60%;
