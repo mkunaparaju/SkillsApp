@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Categories, SubCategories } from '../api/categories.js';
+import SubCategory from './SubCategory.jsx';
 // Category component - represents a single category item
 export default class Category extends Component {
   constructor(props) {
@@ -10,28 +11,44 @@ export default class Category extends Component {
   }
 //getting the sub Categories
 
-   getSubCategories() {
-    return this.state.isOpen ?
-    this.props.category.subCategory.map((e, i) =>
-      <li key={i} className='list-group-item' id="subcat">{e}</li>
-    ) : '';
-  }
+  //  getSubCategories() {
+  //   return this.state.isOpen ?
+  //   this.props.category.subCategory.map((e, i) =>
+  //   <p onClick={this.rendersubDetails(e)}>
+  //     <li key={i} className='list-group-item' id="subcat">{e}</li>
+  //     </p>
+  //   ) : '';
+  // }
 
+getSubCategories(){
+  return this.state.isOpen?
+  this.props.category.subCategory.map((e,i) =>
+   <SubCategory key= {i} subcategory={e} />       
+      ) : "";
+}
 renderDetails()
   {
     var name = this.props.category.category
     var desc = Categories.find({Name: name}).fetch()[0].Description
     document.getElementById("detailsField").innerHTML = desc
+    document.getElementById("details").innerHTML = ""
     return this.state.isOpen ?
     console.log(desc) : console.log("not open") ;
   }
 
+// rendersubDetails(e)
+//     {
+//       console.log(e);
+//       var name = this.props.category.category
+//       var desc = Categories.find({Name: name}).fetch()[0].Description
+//       desc1 ="sdfsdsdgdsgdsgDS"
+//       document.getElementById("detailsField").innerHTML = name
+//       console.log("isOpentest") 
+//     }
 
-// toggleSubState(e){
-//   var details = SubCategories.find({Name:e}).fetch()[0].Details
-//   console.log(details);
-//   document.getElementById("details").innerHTML = details
-//}
+// toggleSubState(){
+//   isSubOpen = isOpen;
+// }
 
 toggleStateOnClick() {
     this.setState({
@@ -49,7 +66,7 @@ toggleStateOnClick() {
                    onClick={this.toggleStateOnClick.bind(this)}>
                    <p >{this.props.category.category}</p>
                   </li>
-                     {this.getSubCategories()}
+                       {this.getSubCategories()}
                      {this.renderDetails()}
                 </div>
            </ul><br />

@@ -30,11 +30,18 @@ header {background:purple;color:white;}
     position: relative; word-break: break-all; background:red
 }
 .col-sm-9 {
-    background-color: peachpuff;
+    /*background-color: peachpuff;*/
     height: 100%;
     top:0;
     bottom:60%;
   }
+.catList {
+    background-color: peachpuff;
+}
+.subcatList {
+    background-color: powderblue;
+}
+
   footer {
     background-color: #f1f1f1;
     position: absolute;

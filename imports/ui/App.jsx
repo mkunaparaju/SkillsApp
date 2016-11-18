@@ -6,6 +6,7 @@ import { Categories, SubCategories } from '../api/categories.js';
 
 import Category from './Category.jsx';
 import Details from './Details.jsx';
+
 // App component - represents the whole app
 export default class App extends Component {
   
@@ -13,7 +14,7 @@ export default class App extends Component {
     return this.props.subCat.map((category) => (
       <Category key={category._id} category={category} />
     ));
-  }
+  } 
   
   render(){
     return(
